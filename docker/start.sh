@@ -13,5 +13,5 @@ docker stop FlightComputer
 
 cd /docker/app
 docker build --tag python-docker .
-docker run -p 5000:5000 --name CaptinsLog -v /var/run/docker.sock:/var/run/docker.sock python-docker
+docker run -p 5000:5000 --name CaptainLog -v /var/run/docker.sock:/var/run/docker.sock python-docker
 #tail -f /dev/null
