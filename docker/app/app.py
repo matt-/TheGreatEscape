@@ -99,6 +99,8 @@ def safeImage():
     head_writer = BytesIO()
     c.setopt(pycurl.WRITEFUNCTION, body_writer.write)
     c.setopt(pycurl.HEADERFUNCTION, head_writer.write)
+    c.setopt(pycurl.USERAGENT, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36')
+
     result = {}
     
     # try / catch for timeout error 
@@ -125,4 +127,4 @@ def safeImage():
     return response
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0')
