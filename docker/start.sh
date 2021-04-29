@@ -5,10 +5,10 @@ timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
 cd /docker/nav
 docker build --tag simple_service .
 
-docker run --name Navigation simple_service
+docker run -d --name Navigation simple_service
 docker stop Navigation
 
-docker run --name FlightComputer simple_service
+docker run -d --name FlightComputer simple_service
 docker stop FlightComputer
 
 cd /docker/app

@@ -1,3 +1,2 @@
 FROM alpine:3.7
-RUN apk add --no-cache mysql-client
-ENTRYPOINT tail /dev/null
+ENTRYPOINT while true; do sleep 1000; done
