@@ -1,0 +1,21 @@
+version: '3'
+services:
+  docker:
+    # Starts a Docker daemon at the DNS name "docker"
+    # Note:
+    #  * This must be called "docker" to line up with the default
+    #    TLS certificate name
+    #  * DOCKER_TLS_CERTDIR defaults to "/certs
+    #image: docker:dind
+    ports:
+        - 5000:5000
+    build:
+        context: docker/
+    #command: > 
+    #    sh -c "ln -sf /var/run/docker.sock /app/docker.sock &&
+    #    dockerd --host=unix:///var/run/docker.sock"
+    
+    #command: dockerd --host=unix:///app/docker.sock
+    privileged: yes
+    volumes:
+        - ./app:/app

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- <h1>{% block title %} Captain's Log {% endblock %}</h1> -->
+    <div style="padding-top: 20px">
+    <a class="btn btn-primary" href="{{ url_for('create') }}">New Entry</a>
+    </div>
+    <hr/>
+    
+    {% for note in notes %}
+    <div class="card text-dark note">
+        <div class="card-body">
+            <span class="badge badge-primary">#{{ note['id'] }}</span>
+            <span class="badge badge-default">{{ note['created'] }}</span>
+            <hr>
+            <p>{{ note['content'] |safe }}</p>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+{% endblock %}

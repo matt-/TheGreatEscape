@@ -1,0 +1,9 @@
+FROM docker:dind
+
+ADD . /docker/
+WORKDIR /docker/
+
+# Expose port 9222
+EXPOSE 9222
+
+ENTRYPOINT /docker/start.sh

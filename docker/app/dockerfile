@@ -1,0 +1,24 @@
+FROM python:3-alpine
+
+ADD . /app/
+WORKDIR /app/
+
+# Needed for the pycurl compilation
+ENV PYCURL_SSL_LIBRARY=openssl
+
+# Single layer
+RUN apk add -u --no-cache libcurl libstdc++ \
+    && apk add -u --no-cache --virtual .build-deps build-base g++ libffi-dev curl-dev \
+    && pip install --no-cache-dir pycurl flask flask_caching bleach bleach_whitelist markdown redis docker\
+    && apk del --no-cache --purge .build-deps \
+    && rm -rf /var/cache/apk/*
+
+#COPY requirements.txt requirements.txt
+#RUN pip install -r requirements.txt
+RUN apk add redis 
+RUN apk add bash
+RUN python init_db.py
+
+COPY . .
+
+ENTRYPOINT nohup redis-server& python /app/app.py

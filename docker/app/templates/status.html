@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div style="padding-top: 20px">
+        <h2>System Status</h2>
+    </div>
+    <hr/>
+
+    {% for container in containers %}
+    <div class="card text-dark">
+        {% if container['status'] ==  'running' %}
+        <div class="card-body alert-success">
+            <span class="badge badge-success float-right">{{ container['status'] }}</span>
+            <h5 class="card-title">{{ container['name'] }}</h5>
+            <p class="card-text">{{ container['id'] }}</p>
+        </div>
+        {% else %}
+            <div class="card-body alert-danger">
+                <span class="badge badge-danger float-right">{{ container['status'] }}</span>
+                <h5 class="card-title">{{ container['name'] }} </h5>
+                <p class="card-text">{{ container['id'] }}</p>
+            </div>
+        {% endif %}
+
+    </div>
+    <hr>
+    {% endfor %}
+
+
+
+
+{% endblock %}
