@@ -4,6 +4,7 @@ As an intrepid interplanetary hacker extraordinaire you often find yourself in r
 
 Your crew, made up of some of the greatest hackers in the universe, also begins to stir.  You appear to be stranded on this forsaken planet in this malfunctioning ship.  The only system that appears to be online is the captain’s log, while flight and navigational systems are down.  Your mission is to bring the flight and navigational systems back online in order to get home!
 
+![screenshot](screenshot.png)
 
 ## To run
 ```
