@@ -11,5 +11,5 @@ Your crew, made up of some of the greatest hackers in the universe, also begins 
 docker-compose up
 ```
 
-Browse to localhost:5000
+Browse to [http://localhost:5000](http://localhost:5000)
 
