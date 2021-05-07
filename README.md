@@ -13,3 +13,4 @@ docker-compose up
 
 Browse to [http://localhost:5000](http://localhost:5000)
 
+Give it a shot, but if you need help check [SOLUTION.md](SOLUTION.md).
